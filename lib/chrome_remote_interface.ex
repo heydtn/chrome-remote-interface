@@ -7,7 +7,7 @@ defmodule ChromeRemoteInterface do
 
   @protocol_env_key "CRI_PROTOCOL_VERSION"
   @protocol_versions ["1-2", "1-3", "tot"]
-  @protocol_version (if (vsn = System.get_env(@protocol_env_key)) in @protocol_versions do
+  @protocol_version (if (vsn = Application.get_env(@protocol_env_key)) in @protocol_versions do
                        vsn
                      else
                        "1-3"
