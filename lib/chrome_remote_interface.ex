@@ -7,7 +7,7 @@ defmodule ChromeRemoteInterface do
 
   @protocol_env_key :cri_protocol_version
   @protocol_versions ["1-2", "1-3", "tot"]
-  @protocol_version (vsn = Application.get_env(:chrome_remote_interface, :cri_protocol_version, "1-3"))
+  @protocol_version Application.get_env(:chrome_remote_interface, :cri_protocol_version, "1-3")
   IO.puts(
     "Compiling ChromeRemoteInterface with Chrome DevTools Protocol version: '#{@protocol_version}'"
   )
